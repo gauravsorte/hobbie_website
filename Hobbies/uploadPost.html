@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Upload Post</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./CSS/uploadPost.css">
+<link rel="stylesheet" href="./CSS/styles.css">
+
+</head>
+<body>
+<div class="bs-example">
+
+    <!-- ==================================== NAVBAR ============================================= -->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a href="./landingPage.html" class="navbar-brand nav_brand"><strong>DYPIAN STUDIO</strong></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="./photos.html" class="nav-item nav-link ">Photos</a>
+                <a href="./videos.html" class="nav-item nav-link">Videos</a>
+                <a href="./uploadPost.html" class="nav-item nav-link active">Upload</a>
+                <a href="./profilePage.html" class="nav-item nav-link">Profile</a>
+  
+            </div>
+            <form class="form-inline ml-auto">
+                <input type="text" class="form-control mr-sm-2" placeholder="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- ==================================================================================== -->
+
+    <div class="container">
+        <form class="form" id="form" method="GET" onsubmit="return checkInputs()" action="/photos.html">
+            
+          <div class="form-group">
+            <label for="inputTitle">Title <sup>*</sup></label>
+            <input type="text" class="form-control" id="inputTitle" placeholder="Title Of Your Post">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+          
+          <div class="form-group">
+                <label for="inputDescription">Description <sup>*</sup></label>
+                <input type="text" class="form-control" id="inputDescription" placeholder="Describe About Your Post">
+                <i class="fas fa-check-circle"></i>
+			          <i class="fas fa-exclamation-circle"></i>
+			          <small>Error message</small>
+            </div>
+
+            <div class="form-group">
+                <label for="inputFile">Choose A File To Upload <sup>*</sup></label>
+                <input type="file" class="form-control-file" id="inputFile" onchange="return fileValidation()">
+                <i class="fas fa-check-circle"></i>
+			          <i class="fas fa-exclamation-circle"></i>
+			          <small>Error message</small>
+            </div>
+
+
+            <div class="form-group ">
+                <label for="inputCategory" >Type Of File</label>
+                <!--    <input type="number" class="form-control" id="inputCollegeYear" placeholder="Enter Your Year"> -->
+                <select class="custom-select mr-sm-2" id="inputCategory">
+                    <option selected>Choose...</option>
+                    <option value="1">Photo</option>
+                    <option value="2">Video</option>
+                  </select>
+                <!-- <button type="submit" class="btn btn-primary upload_button">Upload</button> -->
+             </div>
+
+             <div class="form-group ">
+              <label for="inputCategoryType" >Category <sup>*</sup></label>
+              <!--    <input type="number" class="form-control" id="inputCollegeYear" placeholder="Enter Your Year"> -->
+              <select class="custom-select mr-sm-2" id="inputCategoryType">
+                  <option selected>Choose...</option>
+                  <option value="1">Photography</option>
+                  <option value="2">Dancing</option>
+                  <option value="3">Singing</option>
+                  <option value="4">Instruments</option>
+                  <option value="5">Adventure</option>
+                </select>
+                <i class="fas fa-check-circle"></i>
+			          <i class="fas fa-exclamation-circle"></i>
+			          <small>Error message</small>
+              <button type="submit" class="btn btn-primary upload_button">Upload</button>
+           </div>
+        </form>
+         <!-- Image preview -->
+         <div id="imagePreview"></div> 
+    </div>
+
+    <!-- <div class="popup center">
+        <div class="icon">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="title">
+          Success!!
+        </div>
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nihil provident voluptatem nulla placeat
+        </div>
+        <div class="dismiss-btn">
+          <button id="dismiss-popup-btn">
+            Dismiss
+          </button>
+        </div>
+      </div> -->
+      
+</div>
+<script src="./Js/uploadPost.js"></script>
+</body>
+</html> 
